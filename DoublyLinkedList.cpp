@@ -142,11 +142,10 @@ void DoublyLinkedList<T>::printReverse() {
 
 }
 
-/**
 template <class T>
 void DoublyLinkedList<T>::deleteSubsection() {
-  int lower;
-  int upper;
+  T lower;
+  T upper;
   std::cout << "Enter lower bound: ";
   std::cin >> lower;
   std::cout << "Enter upper bound: ";
@@ -162,7 +161,7 @@ void DoublyLinkedList<T>::deleteSubsection() {
     } else {
       std::cout << temp->data;
     }
-    T value = atoi(temp->data);
+    T value = temp->data;
     if (value <= lower || value >= upper) {
       deleteItem(temp->data);
     }
@@ -170,7 +169,6 @@ void DoublyLinkedList<T>::deleteSubsection() {
   }
   std::cout << std::endl;
 }
-*/
 
 template <class T>
 T DoublyLinkedList<T>::mode() {

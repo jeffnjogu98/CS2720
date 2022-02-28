@@ -52,12 +52,12 @@ class DoublyLinkedList {
   void printReverse();
 
   /**
-   * Deletes a portion of the list
+   * Deletes a portion of the list 
    */
   void deleteSubsection();
 
   /**
-   * 
+   * Computes mode for the elements in the list
    */
   T mode();
 

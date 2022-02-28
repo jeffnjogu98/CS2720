@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-  //  DoublyLinkedList<int> *int = new DoublyLinkedList<int>();
+  DoublyLinkedList<int> *list = new DoublyLinkedList<int>();
   //  DoublyLinkedList<string> *int = new DoublyLinkedList<string>();
   //  DoublyLinkedList<float> *int = new DoublyLinkedList<float>();
 
@@ -25,6 +25,9 @@ int main() {
 
     else if (a == 's') {
       DoublyLinkedList<string> *list = new DoublyLinkedList<string>();
+    }
+    else {
+      cout << "command not found!" << endl;
     }
     
     cout << "insert (i), delete (d), length(l), print(p), deleteSub(b), mode(m), printReverse(r), swapAlt(s), quit(q)" << endl;
@@ -64,26 +67,24 @@ int main() {
     }
       break;
 
-      /**
-	 case 'b':{
-	 cout << "Enter lower bound:";
-	 int b;
-	 cin >> b;
-	 cout << "Enter upper bound:";
-	 int a;
-	 cin >> a;
-	 list->deleteSubsection();
-	 cout<<"Modified List : ";
-	 list->print();
-	 }
-	 break;
-      */
+    case 'b':{
+      cout << "Enter lower bound:";
+      int b;
+      cin >> b;
+      cout << "Enter upper bound:";
+      int a;
+      cin >> a;
+      list->deleteSubsection();
+      cout<<"Modified List : ";
+      list->print();
+    }
+      break;
 
-	 case 'm': {
-	 int mode = list->mode();
-	 cout << "Mode is : " << mode << endl;
-	 }
-	   break;
+    case 'm': {
+      int mode = list->mode();
+      cout << "Mode is : " << mode << endl;
+    }
+      break;
 
     case 'r': {
       list->printReverse();

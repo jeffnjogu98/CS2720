@@ -66,14 +66,14 @@ template<class T>
 void DoublyLinkedList<T>::deleteItem(T &item) {
   NodeType<T> *node = head;
   while(node != nullptr) {
-    if(node->data==item) {
+    if(node->data == item) {
       break;
     }
     node = node->next;
   }
   if(node!= nullptr) {
-    cout<<"Item deleted!"<<endl;
-    if(node->next== nullptr && node->back== nullptr){
+    cout << "Item deleted!" << endl;
+    if(node->next == nullptr && node->back == nullptr){
       free(node);
       head = nullptr;
       tail = nullptr;
@@ -89,17 +89,18 @@ void DoublyLinkedList<T>::deleteItem(T &item) {
       free(node);
     }
     else{
-      NodeType<T> *p, *n;
-      p = node->back;
-      n = node->next;
-      p->next = n;
-      n->back = p;
+      NodeType<T> *a;
+      NodeType<T> *b;
+      a = node->back;
+      b = node->next;
+      a->next = b;
+      b->back = a;
       free(node);
     }
-    cout<<"Item "<<item<<" deleted!"<<endl;
+    cout << "Item " << item << " deleted!" << endl;
   }
   else{
-    cout<<"Item not found!"<<endl;
+    cout << "Item is not in the list" << endl;
   }
 }
 
@@ -141,6 +142,7 @@ void DoublyLinkedList<T>::printReverse() {
 
 }
 
+/**
 template <class T>
 void DoublyLinkedList<T>::deleteSubsection() {
   int lower;
@@ -150,54 +152,55 @@ void DoublyLinkedList<T>::deleteSubsection() {
   std::cout << "Enter upper bound: ";
   std::cin >> upper;
   std::cout << "Original List: ";
-  display();
+  print();
 
 
   NodeType<T> *temp = head;
   while (temp != nullptr) {
-    if (temp->next() != nullptr) {
-      std::cout << temp->getItem().getValue() << " ";
+    if (temp->next != nullptr) {
+      std::cout << temp->data << " ";
     } else {
-      std::cout << temp->getItem().getValue();
+      std::cout << temp->data;
     }
-    int value = temp->getItem().getValue();
+    T value = atoi(temp->data);
     if (value <= lower || value >= upper) {
-      deleteItem(temp->getItem());
+      deleteItem(temp->data);
     }
-    temp = temp->getNext();
+    temp = temp->next;
   }
   std::cout << std::endl;
 }
+*/
 
 template <class T>
-DoublyLinkedList<T>::T mode() {
-  T mod = 0;
-  int m=0;
-  int c=0;
-  if(head== nullptr){
-    return mod;
+T DoublyLinkedList<T>::mode() {
+  int a = 0;
+  int b = 0;
+  T mode = 0;
+  if(head == nullptr){
+    return mode;
   }
   NodeType<T> *node = head->next;
-  mod = head->data;
-  T prev = head->data;
-  m = 1;
-  c = 1;
+  mode = head->data;
+  T last = head->data;
+  a = 1;
+  b = 1;
   while(node!= nullptr){
     if(node->data == node->back->data){
-      c++;
+      b++;
     }
     else{
-      if(c>m){
-	m = c;
-	c = 1;
-	mod = prev;
+      if(b > a){
+	a = b;
+	b = 1;
+	mode = last;
       }
     }
-    prev = node->data;
+    last = node->data;
     node = node->next;
   }
 
-  return mod;
+  return mode;
 }
 
 template <class T>

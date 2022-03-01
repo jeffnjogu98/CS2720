@@ -54,7 +54,7 @@ class DoublyLinkedList {
   /**
    * Deletes a portion of the list 
    */
-  void deleteSubsection();
+  void deleteSubsection(T &lower, T &upper);
 
   /**
    * Computes mode for the elements in the list

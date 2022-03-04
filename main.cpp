@@ -14,21 +14,6 @@ int main(int argc, char* argv[]) {
   DoublyLinkedList<int> *list = new DoublyLinkedList<int>();
   DoublyLinkedList<string> *list2 = new DoublyLinkedList<string>();
   DoublyLinkedList<float> *list3 = new DoublyLinkedList<float>();
-
-  /**  std::ifstream fin( argv[3]);
-  int number;
-  float decimal;
-  string word;
-  while (fin >> number) {
-    list->insertItem(number);
-  }
-  while (fin >> number) {
-    list2->insertItem(word);
-  }
-  while (fin >> number) {
-    list3->insertItem(decimal);
-  }
-  */
   
   bool quit = false;
 
@@ -40,21 +25,34 @@ int main(int argc, char* argv[]) {
     if (a == 'i') {
       Uint = true;
       prompt = true;
-      std::ifstream fin( argv[3]);
+      std::ifstream fin(argv[1]);
       int number;
       while (fin >> number) {
 	list->insertItem(number);
       }
+      fin.close();
     }
 
     else if (a == 'f') {
       Ufloat = true;
       prompt = true;
+      float floatNu;
+      std::ifstream fin(argv[1]);
+      while (fin >> floatNu) {
+	list3->insertItem(floatNu);
+      }
+      fin.close();
     }
 
     else if (a == 's') {
       Ustring = true;
       prompt = true;
+      string strinV;
+      std::ifstream fin(argv[1]);
+      while (fin >> strinV) {
+	list2->insertItem(strinV);
+      }
+      fin.close();
     }
     else {
       cout << "command not found!" << endl;
@@ -247,6 +245,5 @@ int main(int argc, char* argv[]) {
     }
     }
     cout << endl;
-    fin.close();
   }
 }

@@ -8,7 +8,7 @@ template<class T>
 DoublyLinkedList<T>::DoublyLinkedList() {
   head = nullptr;
   tail = nullptr;
-}
+} //constructor
 
 template<class T>
 DoublyLinkedList<T>::~DoublyLinkedList() {
@@ -20,7 +20,7 @@ DoublyLinkedList<T>::~DoublyLinkedList() {
   }
   tail = nullptr;
   head = nullptr;
-}
+} //deconstructor
 
 template<class T>
 void DoublyLinkedList<T>::insertItem(T &item) {
@@ -54,7 +54,7 @@ void DoublyLinkedList<T>::insertItem(T &item) {
   tempNode->back = p;
   tempNode->next = t;
   t->back = tempNode;
-}
+} //insertItem
 
 template<class T>
 void DoublyLinkedList<T>::deleteItem(T &item) {
@@ -92,7 +92,7 @@ void DoublyLinkedList<T>::deleteItem(T &item) {
   } else {
     cout << "Item is not in the list" << endl;
   }
-}
+} //DeleteItem
 
 
 template<class T>
@@ -104,7 +104,7 @@ int DoublyLinkedList<T>::lengthIs() const {
     node = node->next;
   }
   return length;
-}
+} //length
 
 template<class T>
 void DoublyLinkedList<T>::print() {
@@ -117,7 +117,7 @@ void DoublyLinkedList<T>::print() {
       node = node->next;
     }
   }
-}
+} //print
 
 template<class T>
 void DoublyLinkedList<T>::printReverse() {
@@ -131,7 +131,7 @@ void DoublyLinkedList<T>::printReverse() {
     }
   }
 
-}
+} //printReverse
 
 template<class T>
 void DoublyLinkedList<T>::deleteSubsection(T &lower, T &upper) {
@@ -189,7 +189,7 @@ void DoublyLinkedList<T>::deleteSubsection(T &lower, T &upper) {
       return;
     }
   }
-}
+} //DeleteSubselection
 
 template<class T>
 T DoublyLinkedList<T>::mode() {
@@ -219,7 +219,7 @@ T DoublyLinkedList<T>::mode() {
   }
 
   return mode;
-}
+} //Mode
 
 template<class T>
 void DoublyLinkedList<T>::swapAlternate() {
@@ -239,7 +239,7 @@ void DoublyLinkedList<T>::swapAlternate() {
   }
 
   head = tempHead;
-}
+} //swapAlternate
 
 template
 class DoublyLinkedList<int>;
